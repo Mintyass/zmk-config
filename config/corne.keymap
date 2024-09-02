@@ -12,14 +12,30 @@
 #define MEH LS(LC(LALT))
 
 &mt {
+    flavor = "balanced";
     quick-tap-ms = <200>;
 };
 
 &lt {
+    flavor = "balanced";
     quick-tap-ms = <200>;
 };
 
 / {
+    behaviors {
+        td_shift: td_shift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Shift Sticky";
+            bindings = <
+                &sticky_press &kp RSHFT
+                &sticky_press &kp RSHFT
+                &kp RSHFT
+            >;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+        };
+    };
+
     combos { 
         compatible = "zmk,combos";
         combo_esc_l {
@@ -47,7 +63,7 @@
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &sl 3
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                    &sk LCTRL       &mt LWIN ENTER  &lt 1 TAB           &lt 2 BKSP      &mt MEH SPACE   &sk RSHFT
+                                                    &sk LCTRL       &mt LWIN ENTER  &lt 1 TAB           &lt 2 BKSP      &mt MEH SPACE   &td_shift
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
             >;
         };
