@@ -26,7 +26,7 @@
         td_shift: td_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "Shift Sticky";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings = <
                 &sk RSHFT
                 &sk RSHFT
