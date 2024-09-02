@@ -30,9 +30,8 @@
             bindings = <
                 &sk RSHFT
                 &sk RSHFT
-                &kp RSHFT
+                &kt RSHFT
             >;
-            flavor = "hold-preferred";
             tapping-term-ms = <200>;
         };
     };
