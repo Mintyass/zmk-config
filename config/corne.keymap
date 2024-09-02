@@ -10,6 +10,16 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    &mt {
+        quick-tap-ms = <200>;
+    };
+
+    &lt {
+        quick-tap-ms = <200>;
+    };
+}
+
+/ {
     combos { 
         compatible = "zmk,combos";
         combo_esc_l {
@@ -90,16 +100,5 @@
             >;
         };
         
-        &mt LWIN ENTER {
-            quick-tap-ms = <200>;
-        };
-
-        &lt 1 TAB {
-            quick-tap-ms = <200>;
-        };
-
-        &lt 2 BKSP {
-            quick-tap-ms = <200>;
-        };
     };
 };
