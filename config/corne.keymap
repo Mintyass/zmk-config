@@ -27,8 +27,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "Shift Sticky";
             bindings = <
-                &sticky_key_press &kp RSHFT
-                &sticky_key_press &kp RSHFT
+                &sk RSHFT
+                &sk RSHFT
                 &kp RSHFT
             >;
             flavor = "hold-preferred";
