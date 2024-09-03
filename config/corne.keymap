@@ -21,6 +21,10 @@
     quick-tap-ms = <200>;
 };
 
+&sk {
+    quick-release;
+};
+
 / {
     behaviors {
         td_shift: td_shift {
@@ -30,7 +34,7 @@
             bindings = <
                 &sk RSHFT
                 &sk RSHFT
-                &kt RSHFT
+                &kp CAPS
             >;
             tapping-term-ms = <200>;
         };
