@@ -20,19 +20,19 @@
 include:
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view
-    cmake-args: -DEXTRA_CONF_FILE=desk.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/desk.conf
     artifact-name: desk-corne_left
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
-    cmake-args: -DEXTRA_CONF_FILE=desk.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/desk.conf
     artifact-name: desk-corne_right
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view
-    cmake-args: -DEXTRA_CONF_FILE=travel.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/travel.conf
     artifact-name: travel-corne_left
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
-    cmake-args: -DEXTRA_CONF_FILE=travel.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/travel.conf
     artifact-name: travel-corne_right
   - board: nice_nano_v2
     shield: settings_reset
