@@ -1,0 +1,21 @@
+if SHIELD_CORNE_DONGLE
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+# Both Corne halves connect to the dongle.
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+# 2 peripherals + 5 host profiles. ZMK's central default is 6, which only
+# leaves room for one peripheral.
+config BT_MAX_CONN
+    default 7
+
+config BT_MAX_PAIRED
+    default 7
+
+endif
