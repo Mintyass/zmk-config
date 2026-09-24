@@ -20,19 +20,19 @@
 include:
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view_gem
-    cmake-args: -DEXTRA_CONF_FILE=../../config/desk.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/desk.conf -DEXTRA_DTC_OVERLAY_FILE=../../config/force_6col.overlay
     artifact-name: desk-corne_left
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view_gem
-    cmake-args: -DEXTRA_CONF_FILE=../../config/desk.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/desk.conf -DEXTRA_DTC_OVERLAY_FILE=../../config/force_6col.overlay
     artifact-name: desk-corne_right
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view_gem
-    cmake-args: -DEXTRA_CONF_FILE=../../config/travel.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/travel.conf -DEXTRA_DTC_OVERLAY_FILE=../../config/force_6col.overlay
     artifact-name: travel-corne_left
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view_gem
-    cmake-args: -DEXTRA_CONF_FILE=../../config/travel.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/travel.conf -DEXTRA_DTC_OVERLAY_FILE=../../config/force_6col.overlay
     artifact-name: travel-corne_right
   # Prospector dongle (XIAO nRF52840) running YADS. Desk only -- it is the
   # split central, so desk-corne_left/right above build as peripherals.

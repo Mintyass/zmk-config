@@ -1,0 +1,28 @@
+/*
+ * Force the six-column layout on the Corne halves.
+ *
+ * corne.dtsi includes 5column.dtsi before 6column.dtsi, so the five-column
+ * layout is layouts[0], and at runtime the halves resolve key positions with
+ * &five_column_transform (columns = <10>) rather than the chosen six-column
+ * layout's &default_transform (columns = <12>). Verified on hardware from the
+ * split bitmap: pressing T (position 5) set bit 4; hs LALT (position 12) set
+ * bit 9. Both are row*10+col looked up in the five-column map.
+ *
+ * This went unnoticed while a keyboard half was the split central, because
+ * keymap.c runs every position through zmk_physical_layouts_get_position_map(
+ * stock=6col, selected=5col), which silently converted them back. A dongle
+ * central has a single synthetic layout, so source == dest and that function
+ * short-circuits to an identity map -- no correction, wrong letters.
+ *
+ * Disabling the five-column layout leaves one entry, so layouts[0] and the
+ * chosen layout are the same node. Safe for the position map: ZMK_POS_MAP_ENTRY
+ * checks DT_NODE_HAS_STATUS(..., okay) and stores NULL for a disabled layout.
+ *
+ * Applied via EXTRA_DTC_OVERLAY_FILE in build.yaml, not as config/<shield>.overlay:
+ * ZMK applies the config overlay BEFORE the shield's, so the label would not
+ * yet exist.
+ */
+
+&foostan_corne_5col_layout {
+    status = "disabled";
+};
